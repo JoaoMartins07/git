@@ -1,0 +1,44 @@
+git init
+Inicializa um repositório Git vazio no diretório atual. Cria uma pasta oculta. git onde o Git armazena todos os dados do repositório.
+git clone <url>
+Cria uma cópia local de um repositório remoto. Pode ser uma URL de um repositório Git hospedado em sites como GitHub, GitLab, etc.
+ git status
+Mostra o estado atual do repositório, indicando se existem alterações não confirmadas (unstaged), modificações, ou arquivos que ainda não foram adicionados ao controle de versão.
+git add <arquivo> ou git add.
+Adiciona alterações feitas no(s) arquivo(s) à área de preparação (staging area). Isso prepara os arquivos para serem comitados. Se você usar git add., todos os arquivos modificados no diretório serão adicionados.
+git commit -m "mensagem"
+Regista as alterações adicionadas à área de preparação, criando um novo commit no histórico de versões com a mensagem especificada.
+git push
+Envia os commits locais para o repositório remoto, atualizando-o com as mudanças que foram feitas.
+git pull
+Puxa as últimas alterações do repositório remoto e as integra no repositório local.
+git fetch
+Baixa as últimas alterações do repositório remoto, mas não as aplica automaticamente no repositório local. Pode ser útil para ver as mudanças antes de integrá-las.
+git log
+Exibe o histórico de commits, mostrando os identificadores (hash) dos commits, as mensagens de commit, e os autores.
+git diff
+Mostra as diferenças entre a versão atual e a versão anterior dos arquivos ou entre dois commits.
+git branch
+Lista as branches (ramificações) existentes no repositório. Se usado com um nome de branch, cria uma nova branch.
+git checkout <branch>
+Muda para a branch especificada. Pode ser usado para alternar entre diferentes versões de desenvolvimento no mesmo repositório.
+git merge <branch>
+Combina as alterações de uma branch específica com a branch atual. Normalmente, é usado para integrar alterações de uma branch de funcionalidade em uma branch principal, como master ou main.
+git reset
+Reverte o repositório para um commit anterior. Pode ser usado com várias opções, como --hard (que apaga mudanças) ou --soft (que mantém as mudanças no diretório de trabalho).
+git rm <arquivo>
+Remove um arquivo do repositório e da área de preparação. A mudança será refletida no próximo commit.
+git remote add origin <url-do-repositorio>
+Conecta o seu repositório local a um repositório remoto, como o GitHub. A <url-do-repositorio> é o link do repositório remoto onde você quer enviar o código (ex: https://github.com/SEUNOME/REPOSITORIO.git).
+
+
+git config --global user.name "Your Name"
+Este comando define o nome do utilizador que aparecerá nos commits. O parâmetro --global significa que esta configuração será aplicada globalmente, ou seja, para todos os repositórios Git no sistema.
+git config --global user.email you@example.com
+Este comando define o endereço de e-mail do utilizador que também será associado aos commits. Como o anterior, o --global aplica esta configuração de forma global.
+O comando git push --set-upstream origin master faz o seguinte:
+•	git push: Envia as alterações locais para um repositório remoto, ou seja, carrega as suas mudanças para o servidor (no caso, o repositório remoto).
+•	--set-upstream: Esta opção define uma "relação" entre o ramo local e o ramo remoto. Ou seja, ela configura o ramo local para acompanhar (ou "subir para") o ramo remoto, de forma que, em futuros git push ou git pull, o Git saiba automaticamente para qual ramo remoto deve enviar ou de qual ramo remoto deve buscar as alterações.
+•	origin: É o nome do repositório remoto. Por padrão, o repositório remoto é chamado de origin, mas isso pode ser alterado.
+•	master: Refere-se ao nome do ramo (branch) local que será enviado para o repositório remoto. Neste caso, o ramo local master será empurrado (push) para o repositório remoto.
+Resumindo, o comando git push --set-upstream origin master envia o ramo local master para o repositório remoto origin e, ao mesmo tempo, estabelece que, no futuro, o Git sabe que o ramo master local estará associado ao ramo master remoto.
